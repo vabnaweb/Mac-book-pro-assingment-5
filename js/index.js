@@ -2,7 +2,7 @@
       memory function 
 --------------------------*/
 function addMemory(memorySize) {
-   
+
     let memoryPriceText = document.getElementById("memory-price");
     memoryPrice = parseInt(memoryPriceText.innerText);
     if (memorySize == "normal") {
@@ -39,7 +39,7 @@ function addStorage(storageSize) {
 function addDeliveryCost(deliverycost) {
     let deliveryPriceText = document.getElementById("delivery-price");
     deliveryPrice = parseInt(deliveryPriceText.innerText);
-    if (deliverycost =="free") {
+    if (deliverycost == "free") {
         deliveryPriceText.innerText = 0;
     }
     else {
@@ -52,14 +52,14 @@ function addDeliveryCost(deliverycost) {
    total calculation 
 -------------------*/
 
-function totalPrice(){
+function totalPrice() {
     let memoryPriceText = document.getElementById('memory-price');
     memoryPrice = parseInt(memoryPriceText.innerText);
-    
+
 
     let storagePriceText = document.getElementById('SSD-price').innerText;
     // storagePrice = storagePriceText.innertext;
-    
+
 
     let deliveryCostText = document.getElementById("delivery-price");
     deliveryCost = parseInt(deliveryCostText.innerText);
@@ -69,10 +69,10 @@ function totalPrice(){
     let finalTotalText = finalTotal.innerText
     finalTotal.innerText = totalPrices.innerText;
     let returnValue = totalPrices.innerText;
- 
+
 
     return returnValue;
-   
+
 }
 
 
@@ -142,13 +142,13 @@ document.getElementById("apply-button").addEventListener("click", function () {
     const secretCode = inputtext.value;
     if (secretCode == "stevekaku") {
         /* -----get the totalPrice--- */
-       let secret = totalPrice();
-      /* ------------ 20% discount------------ */
-       let discount = parseInt(secret)*20/100;
-       
-       let finalPrice = parseInt(secret)-discount;
-       let finalDiscountPrice  = document.getElementById("final-price");
-       finalDiscountPrice.innerText =finalPrice;
+        let secret = totalPrice();
+        /* ------------ 20% discount------------ */
+        let discount = parseInt(secret) * 20 / 100;
+
+        let finalPrice = parseInt(secret) - discount;
+        let finalDiscountPrice = document.getElementById("final-price");
+        finalDiscountPrice.innerText = finalPrice;
         inputtext.value = "";
     }
 })
